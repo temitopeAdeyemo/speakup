@@ -33,7 +33,6 @@ Kindly ensure that you are in the root directory before running the following co
 Ensure you have the used technologies listed above installed on your local machine as this project is not being deployed in a cloud environment.
 
 
-
 ## Install Dependencies and Run the Application
 
 ```bash
