@@ -30,7 +30,7 @@ Before starting, you need to create a .env file in the root directory of the pro
 Kindly ensure that you are in the root directory before running the following commands.
 
 ## Note
-Also ensure you have the following technologies installed in your local machine as this project is not being deployed in a cloud environment.
+Ensure you have the used technologies listed above installed on your local machine as this project is not being deployed in a cloud environment.
 
 
 
