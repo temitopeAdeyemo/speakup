@@ -54,3 +54,8 @@ yarn dev
 ```bash
 migration:up
 ```
+
+## Key Features (At the time)
+1. Users can create an account and login to the application
+2. Users can reset and change password.
+
