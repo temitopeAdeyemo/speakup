@@ -8,7 +8,7 @@ This is a RESTful API for Speakup. Speakup is a blog application where user come
 
 The following technologies are being used in this project:
 
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [TypeScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [Postgresql](https://www.postgres.com/)
