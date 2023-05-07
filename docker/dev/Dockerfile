@@ -1,5 +1,5 @@
 FROM node:16-alpine
-LABEL maintainer="https://github.com/benidevo"
+LABEL maintainer="https://github.com/temitopeAdeyemo"
 
 WORKDIR /app
 
