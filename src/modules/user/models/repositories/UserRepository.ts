@@ -78,7 +78,7 @@ class UserRepository {
     return user || undefined;
   }
 
-  async save(user: User): Promise<User> {
+  async save(user: IUserDTO): Promise<User> {
     return this.ormRepository.save(user);
   }
 

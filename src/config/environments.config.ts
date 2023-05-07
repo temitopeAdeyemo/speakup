@@ -4,11 +4,11 @@ dotenv.config({ path: './.env' });
 export default {
   port: process.env.PORT || '',
   nodeEnv: process.env.NODE_ENV || '',
-  dbHost: process.env.DB_HOST || '',
-  dbType: process.env.DB_TYPE || '',
-  dbPort: process.env.DB_PORT || '',
-  dbUserName: process.env.DB_USERNAME || '',
-  dbPassword: process.env.DB_PASSWORD || '',
+  dbHost: process.env.DB_HOST || 'db',
+  dbType: process.env.DB_TYPE || 'postgres',
+  dbPort: process.env.DB_PORT || '5432',
+  dbUserName: process.env.DB_USERNAME || 'postgres',
+  dbPassword: process.env.DB_PASSWORD || '123456789',
   database: process.env.DB_DATABASE || '',
   databaseAppName: process.env.DB_APPLICATION_NAME || '',
   redisHost: process.env.REDIS_HOST || '127.0.0.1',
@@ -17,5 +17,5 @@ export default {
   jwtRefreshTokenSecret: process.env.JWT_REFRESH_TOKEN_SECRET || 'secret',
   sendInBlueApiKey: process.env.SENDINBLUE_API_KEY || '',
   saltRounds: process.env.SALT_ROUNDS || 10,
-  otpExpiresin: Number(process.env.OTP_EXPIRES_IN) || 60
+  otpExpiresin: Number(process.env.OTP_EXPIRES_IN) || 60,
 };

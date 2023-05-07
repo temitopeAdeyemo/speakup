@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  api: &api
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    container_name: api
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - db
+    networks:
+      - wheelerblog-network
+
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - ./.env
+    volumes:
+      - wheelerblog-dev-db:/data/db
+    networks:
+      - wheelerblog-network
+
+  redis:
+    image: redis:alpine3.16
+    container_name: wheelerblog-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - wheelerblog-network
+
+volumes:
+  wheelerblog-dev-db:
+
+networks:
+  wheelerblog-network:
+    driver: bridge

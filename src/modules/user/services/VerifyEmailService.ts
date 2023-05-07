@@ -4,7 +4,7 @@ class VerifyUserPhoneService extends BaseService implements IBaseService {
   async execute(data: IVerifyEmailDTO): Promise<void> {
     const userDetails = await this.getUser('email', data.email);
 
-    this.checkCredentialNotVerified('email', userDetails);
+    this.throwCredVerified('email', userDetails);
 
     await this.getAndValidateOtp(`verify_email.${data.email}`, data.otp);
 
