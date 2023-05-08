@@ -20,14 +20,14 @@ class SmsService {
       case 'passReset':
         return this.send(
           smsRecipient,
-          `Hi  Use the OTP below to verify your PHAST phone number.
+          `Hi  Use the OTP below to verify your SpeakUp phone number.
 ${otp}`
         );
 
       case 'verifyPhone':
         return this.send(
           smsRecipient,
-          `Hi  Use the OTP below to verify your PHAST phone number.
+          `Hi  Use the OTP below to verify your SpeakUp phone number.
 ${otp}`
         );
     }
@@ -37,9 +37,10 @@ ${otp}`
     const options = {
       to: smsRecipient,
       message: message,
-      from: 'Quick Pay',
+      from: 'Speak Up',
     };
-    this.sendSMS.send(options);
+    return "Sent!"
+    // this.sendSMS.send(options);
   }
 }
 
