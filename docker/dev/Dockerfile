@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:20-alpine
 LABEL maintainer="https://github.com/temitopeAdeyemo"
 
 WORKDIR /app
@@ -21,4 +21,4 @@ RUN chmod +x /entrypoint.sh
 
 USER node
 
-ENTRYPOINT /bin/wait-for-it.sh rabbitmq:5672 --timeout=30 -- npm run start:dev
+ENTRYPOINT ["/entrypoint.sh"]

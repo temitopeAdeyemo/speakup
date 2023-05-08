@@ -1,14 +1,25 @@
 {
-  "name": "quickpay",
+  "name": "wheeler_blog",
   "version": "1.0.0",
-  "main": "app.ts",
+  "description": "This is the back-end API for Wheeler Blog.",
   "scripts": {
     "start": "NODE_ENV=production node dist/shared/server.js",
-    "dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/shared/server.ts",
+    "start:dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/shared/server.ts",
     "migration:generate": "typeorm-ts-node-commonjs migration:generate -d ./src/config/database.config.ts ./src/shared/migrations/migrations",
     "migration:up": "typeorm-ts-node-commonjs migration:run -d ./src/config/database.config.ts",
     "migration:down": "typeorm-ts-node-commonjs migration:revert -d ./src/config/database.config.ts"
   },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temitopeAdeyemo/speakup.git"
+  },
+    "keywords": [],
+  "author": "",
+  "license": "ISC",
+      "bugs": {
+    "url": "https://github.com/temitopeAdeyemo/speakup/issues"
+  },
+  "homepage": "https://github.com/temitopeAdeyemo/speakup#readme",
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
     "@types/bcryptjs": "^2.4.2",
@@ -32,13 +43,11 @@
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "@types/winston": "^2.4.4"
   },
   "dependencies": {
-    "@types/redis": "^4.0.11",
-    "@types/winston": "^2.4.4",
-    "africastalking": "^0.6.2",
-    "axios": "^1.2.0",
+    "axios": "^1.2.6",
     "bcryptjs": "^2.4.3",
     "camelcase": "^7.0.0",
     "celebrate": "^15.0.1",
@@ -49,19 +58,6 @@
     "dotenv": "^16.0.2",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
-    "getobject": "^1.1.1",
-    "helmet": "^6.0.0",
-    "ioredis": "^5.2.3",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.7.0",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.5-lts.1",
-    "pg": "^8.10.0",
-    "rate-limiter-flexible": "^2.3.10",
-    "redis": "^4.6.5",
-    "redis-stack": "redis-stack/redis-stack",
-    "reflect-metadata": "^0.1.13",
-    "request": "^2.88.2",
     "sib-api-v3-sdk": "^8.5.0",
     "tsyringe": "^4.7.0",
     "twilio": "^3.83.1",
@@ -69,9 +65,19 @@
     "underscore": "^1.13.6",
     "uuid": "^9.0.0",
     "winston": "^3.8.2",
-    "winston-daily-rotate-file": "^4.7.1"
+    "winston-daily-rotate-file": "^4.7.1",
+      "helmet": "^6.0.0",
+    "ioredis": "^5.2.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.7.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.10.0",
+    "rate-limiter-flexible": "^2.3.10",
+    "reflect-metadata": "^0.1.13",
+    "request": "^2.88.2",
+    "redis": "^4.6.5",
+    "africastalking": "^0.6.2"
   },
-  "repository": "https://itexdevops@dev.azure.com/itexdevops/QuickPay/_git/QuickPay",
-  "author": "temiAdeyemo <temitopejulius9@gmail.com>",
-  "license": "MIT"
+    "main": "app.ts"
 }
