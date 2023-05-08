@@ -11,7 +11,7 @@ export default {
   dbPassword: process.env.DB_PASSWORD || '123456789',
   database: process.env.DB_DATABASE || '',
   databaseAppName: process.env.DB_APPLICATION_NAME || '',
-  redisHost: process.env.REDIS_HOST || '127.0.0.1',
+  redisHost: process.env.REDIS_HOST || 'redis',
   redisPort: process.env.REDIS_PORT || '6379',
   jwtAccessTokenSecret: process.env.JWT_ACCESS_TOKEN_SECRET || 'secret',
   jwtRefreshTokenSecret: process.env.JWT_REFRESH_TOKEN_SECRET || 'secret',

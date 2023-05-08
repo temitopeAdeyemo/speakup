@@ -9,17 +9,16 @@ import environment from '../config/environments.config';
 import errorHandler from '../shared/middlewares/errorHandler';
 import rateLimiter from '../shared/middlewares/rateLimiter';
 import routes from './routes';
-import Redis from '../shared/services/Redis';
 import JsonResponse from './utils/AppSuccess';
 import { morganMiddleware, systemLogs } from '../shared/utils/Logger';
-import chalk from "chalk"
+import chalk from 'chalk';
 
 export default class App {
   app: express.Application;
   constructor() {
     this.app = express();
     require('../config/database.config');
-    new Redis();
+    require('../shared/services/Redis');
 
     this.app.use(morganConfig);
     this.app.use(morganMiddleware);
@@ -54,7 +53,7 @@ export default class App {
     this.app.get('/', (request: Request, response: Response) => {
       response.status(200).json({
         success: true,
-        message: 'Welcome To Quick Pay',
+        message: 'Welcome To Speakup!',
       });
     });
 

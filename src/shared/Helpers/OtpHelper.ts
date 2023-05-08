@@ -1,9 +1,9 @@
 import AppError from '../utils/AppError';
-import Cache from '../services/Redis';
+import cache from '../services/Redis';
 import config from '../../config/environments.config';
 
 export default class OTPHelper {
-  private readonly cache = new Cache();
+  private readonly cache = cache;
 
   cacheOtp_(key: any, otp: string) {
     this.cache.set(key, otp, config.otpExpiresin);
