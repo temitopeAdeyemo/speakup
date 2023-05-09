@@ -8,7 +8,7 @@ class GetPhoneOtpService extends BaseService_1.default {
     async execute(data) {
         const user = await this.getUser('phone_number', data.phone_number);
         await this.throwCredVerified('phone_number', user);
-        this.cacheOtp(data.phone_number, this.generatedOtp);
+        await this.cacheOtp(data.phone_number, this.generatedOtp);
         this.sendOtpSms('verifyPhone', data.phone_number, this.generatedOtp);
     }
 }

@@ -6,7 +6,7 @@ class GetPhoneOtpService extends BaseService implements IBaseService {
 
     await this.throwCredVerified('phone_number', user);
 
-    this.cacheOtp(data.phone_number, this.generatedOtp);
+    await this.cacheOtp(data.phone_number, this.generatedOtp);
 
     this.sendOtpSms('verifyPhone', data.phone_number, this.generatedOtp);
   }
