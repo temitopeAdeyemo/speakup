@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ForgotPasswordValidator = exports.resetPasswordValidator = exports.GetPhoneOtpValidator = exports.VerifyPhoneValidator = exports.registerValidator = exports.loginValidator = void 0;
+exports.getEmailValidator = exports.verifyEmailValidator = exports.ForgotPasswordValidator = exports.resetPasswordValidator = exports.GetPhoneOtpValidator = exports.VerifyPhoneValidator = exports.registerValidator = exports.loginValidator = void 0;
 const loginValidator_1 = __importDefault(require("./loginValidator"));
 exports.loginValidator = loginValidator_1.default;
 const registerValidator_1 = __importDefault(require("./registerValidator"));
@@ -16,3 +16,7 @@ const ResetPasswordValidator_1 = __importDefault(require("./ResetPasswordValidat
 exports.resetPasswordValidator = ResetPasswordValidator_1.default;
 const forgotPasswordValidator_1 = __importDefault(require("./forgotPasswordValidator"));
 exports.ForgotPasswordValidator = forgotPasswordValidator_1.default;
+const verifyEmailValidator_1 = __importDefault(require("./verifyEmailValidator"));
+exports.verifyEmailValidator = verifyEmailValidator_1.default;
+const getEmailValidator_1 = __importDefault(require("./getEmailValidator"));
+exports.getEmailValidator = getEmailValidator_1.default;

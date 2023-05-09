@@ -4,6 +4,8 @@ import VerifyUserPhoneService from './VerifyPhoneNumberService';
 import GetPhoneOtpService from './GetPhoneOtpService';
 import ResetPasswordService from './ResetPasswordService';
 import ForgotPasswordService from './ForgotPasswordService';
+import VerifyEmailService from './VerifyEmailService';
+import GetEmailOtpService from './GetEmailOtpService';
 
 export {
   CreateUserService,
@@ -12,4 +14,6 @@ export {
   GetPhoneOtpService,
   ResetPasswordService,
   ForgotPasswordService,
+  VerifyEmailService,
+  GetEmailOtpService,
 };

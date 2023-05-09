@@ -23,16 +23,12 @@ class UserRepository {
     }
     async findByPhoneOrEmail(data, value) {
         let user;
-        if ((data = 'phone_number')) {
-            user = await this.ormRepository.findOne({
-                where: { phone_number: value },
-            });
-        }
-        else {
-            user = await this.ormRepository.findOne({
-                where: { email: value },
-            });
-        }
+        const query = {};
+        query[data] = value;
+        console.log(66666666666, query);
+        user = await this.ormRepository.findOne({
+            where: query,
+        });
         return user || undefined;
     }
     async findById(id) {
@@ -63,7 +59,6 @@ class UserRepository {
     async save(user) {
         return this.ormRepository.save(user);
     }
-    async update() {
-    }
+    async update() { }
 }
 exports.default = UserRepository;

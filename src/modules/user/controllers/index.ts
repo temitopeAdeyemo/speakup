@@ -1,15 +1,19 @@
-import CreateUser from './Create.controller';
-import AuthUser from './Auth.controller';
-import VerifyPhoneController from './VerifyPhone.controller';
-import GetPhoneOtpController from './GetPhoneOtp.controller';
-import ResetPasswordController from './ResetPassword.controller';
-import ForgotPasswordController from './ForgotPassword.controller';
+import createUser from './create.controller';
+import authUser from './auth.controller';
+import verifyPhoneController from './verifyPhone.controller';
+import getPhoneOtpController from './getPhoneOtp.controller';
+import resetPasswordController from './resetPassword.controller';
+import forgotPasswordController from './forgotPassword.controller';
+import verifyEmailController from './verifyEmail.controller';
+import getEmailOtpController from './getEmailOtp.controller';
 
 export {
-  CreateUser,
-  AuthUser,
-  VerifyPhoneController,
-  GetPhoneOtpController,
-  ResetPasswordController,
-  ForgotPasswordController,
+  createUser,
+  authUser,
+  verifyPhoneController,
+  getPhoneOtpController,
+  resetPasswordController,
+  forgotPasswordController,
+  getEmailOtpController,
+  verifyEmailController,
 };

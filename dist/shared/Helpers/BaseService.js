@@ -54,26 +54,26 @@ class BaseService {
         /**
          * This property creates a user when called.
          */
-        this.createUser = this.dbRepoHelper.createUser_;
+        this.createUser = this.dbRepoHelper.createUser_.bind(this.dbRepoHelper);
         // protected updateAccInfo = this.dbRepoHelper.updateAccInfo_;
-        this.throwCredTaken = this.dbRepoHelper.credentialTaken_;
-        this.getUser = this.dbRepoHelper.getUser_;
-        this.sendOtpMail = this.emailSmsHelper.sendOtpMail_;
-        this.hashPassword = this.passwordHelpers.hashPassword_;
-        this.checkPassword = this.passwordHelpers.checkPassword_;
-        this.cacheOtp = this.otpHelper.cacheOtp_;
+        this.throwCredTaken = this.dbRepoHelper.credentialTaken_.bind(this.dbRepoHelper);
+        this.getUser = this.dbRepoHelper.getUser_.bind(this.dbRepoHelper);
+        this.sendOtpMail = this.emailSmsHelper.sendOtpMail_.bind(this.emailSmsHelper);
+        this.hashPassword = this.passwordHelpers.hashPassword_.bind(this.passwordHelpers);
+        this.checkPassword = this.passwordHelpers.checkPassword_.bind(this.passwordHelpers);
+        this.cacheOtp = this.otpHelper.cacheOtp_.bind(this.otpHelper);
         this.generatedOtp = this.generateOTP;
-        this.sendOtpSms = this.emailSmsHelper.sendOtpSms_;
-        this.returnNumberOREmail = this.extraHelpers.returnNumberOREmail_;
-        this.sendOtpEmailOrSms = this.emailSmsHelper.sendOtpEmailOrSms_;
-        this.getUserByPhoneOREmail = this.dbRepoHelper.getUserByPhoneOREmail_;
-        this.throwCredVerified = this.extraHelpers.checkCredentialNotVerified_;
-        this.throwCredNotVerified = this.extraHelpers.checkCredentialVerified_;
-        this.getAndValidateOtp = this.otpHelper.getAndValidateOtp_;
-        this.updateUser = this.dbRepoHelper.updateUser_;
-        this.hashAndUpdatePassword = this.passwordHelpers.hashAndUpdatePassword_;
-        this.deleteCachedOtp = this.otpHelper.deleteCachedOtp_;
-        this.getCachedOtp = this.otpHelper.getCachedOtp_;
+        this.sendOtpSms = this.emailSmsHelper.sendOtpSms_.bind(this.emailSmsHelper);
+        this.returnNumberOREmail = this.extraHelpers.returnNumberOREmail_.bind(this.extraHelpers);
+        this.sendOtpEmailOrSms = this.emailSmsHelper.sendOtpEmailOrSms_.bind(this.emailSmsHelper);
+        this.getUserByPhoneOREmail = this.dbRepoHelper.getUserByPhoneOREmail_.bind(this.dbRepoHelper);
+        this.throwCredVerified = this.extraHelpers.checkCredentialNotVerified_.bind(this.extraHelpers);
+        this.throwCredNotVerified = this.extraHelpers.checkCredentialVerified_.bind(this.extraHelpers);
+        this.getAndValidateOtp = this.otpHelper.getAndValidateOtp_.bind(this.otpHelper);
+        this.updateUser = this.dbRepoHelper.updateUser_.bind(this.dbRepoHelper);
+        this.hashAndUpdatePassword = this.passwordHelpers.hashAndUpdatePassword_.bind(this.passwordHelpers);
+        this.deleteCachedOtp = this.otpHelper.deleteCachedOtp_.bind(this.otpHelper);
+        this.getCachedOtp = this.otpHelper.getCachedOtp_.bind(this.otpHelper);
     }
 }
 exports.default = BaseService;

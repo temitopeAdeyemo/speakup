@@ -17,6 +17,7 @@ export default class DbRepoHelper {
       credential,
       value
     );
+    console.log(888888, userExists);
 
     if (userExists) {
       throw new AppError(`${credential} taken.`, 400);

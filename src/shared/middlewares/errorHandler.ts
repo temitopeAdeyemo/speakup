@@ -11,6 +11,8 @@ export default function errorHandler(
   response: Response,
   _: NextFunction
 ): Response {
+  console.log(44444444, error);
+
   if (error instanceof AppError) {
     return response.status(error.statusCode).json({
       success: false,

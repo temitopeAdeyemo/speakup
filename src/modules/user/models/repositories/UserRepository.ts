@@ -32,16 +32,13 @@ class UserRepository {
     value: string
   ): Promise<User | undefined> {
     let user: User | null;
+    const query: any = {};
+    query[data] = value;
+    console.log(66666666666, query);
 
-    if ((data = 'phone_number')) {
-      user = await this.ormRepository.findOne({
-        where: { phone_number: value },
-      });
-    } else {
-      user = await this.ormRepository.findOne({
-        where: { email: value },
-      });
-    }
+    user = await this.ormRepository.findOne({
+      where: query,
+    });
 
     return user || undefined;
   }
@@ -82,9 +79,7 @@ class UserRepository {
     return this.ormRepository.save(user);
   }
 
-  async update() {
-    
-  }
+  async update() {}
 }
 
 export default UserRepository;

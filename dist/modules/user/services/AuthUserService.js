@@ -8,8 +8,8 @@ class AuthUserService extends BaseService_1.default {
     async execute(data) {
         this.checkPassword;
         const user = await this.getUser('email', data.email);
-        this.throwCredNotVerified('phone_number', user);
         await this.checkPassword(data.password, user.password);
+        await this.throwCredNotVerified('email', user);
         const accessToken = this.jwtClient.generateAccessToken({ id: user.id });
         return { access_token: accessToken };
     }

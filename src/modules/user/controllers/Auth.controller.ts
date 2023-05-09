@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { AuthUserService } from '../services';
-import BaseController from './BaseController';
+import BaseController from './baseController';
 
 class AuthUser extends BaseController {
   constructor() {

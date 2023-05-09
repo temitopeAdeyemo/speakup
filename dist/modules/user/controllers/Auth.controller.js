@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const services_1 = require("../services");
-const BaseController_1 = __importDefault(require("./BaseController"));
-class AuthUser extends BaseController_1.default {
+const baseController_1 = __importDefault(require("./baseController"));
+class AuthUser extends baseController_1.default {
     constructor() {
         super('body', ['email', 'password', 'phone_number', 'first_name', 'last_name'], new services_1.AuthUserService(), 200, 'OK');
     }

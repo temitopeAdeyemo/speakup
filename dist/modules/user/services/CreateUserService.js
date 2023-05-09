@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const BaseService_1 = __importDefault(require("../../../shared/Helpers/BaseService"));
 class CreateUserService extends BaseService_1.default {
     async execute(data) {
-        this.throwCredTaken('email', data.email);
-        this.throwCredTaken('phone_number', data.phone_number);
+        await this.throwCredTaken('email', data.email);
+        await this.throwCredTaken('phone_number', data.phone_number);
         data.password = await this.hashPassword(data.password);
-        this.createUser(data);
-        const otpId = this.cacheOtp(`$verify_phone_number.${data.phone_number}`, this.generatedOtp);
-        this.sendOtpSms('verifyPhone', data.phone_number, this.generatedOtp);
-        return { email: data.email, otp_id: otpId };
+        await this.createUser(data);
+        await this.cacheOtp(`$verify_email.${data.phone_number}`, this.generatedOtp);
+        await this.sendOtpMail("verifyEmail", data.email, this.generatedOtp);
+        return { email: data.email };
     }
 }
 exports.default = CreateUserService;

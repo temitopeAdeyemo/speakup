@@ -36,43 +36,65 @@ export default abstract class BaseService {
   /**
    * This property creates a user when called.
    */
-  protected createUser = this.dbRepoHelper.createUser_;
+  protected createUser = this.dbRepoHelper.createUser_.bind(this.dbRepoHelper);
 
   // protected updateAccInfo = this.dbRepoHelper.updateAccInfo_;
 
-  protected throwCredTaken = this.dbRepoHelper.credentialTaken_;
+  protected throwCredTaken = this.dbRepoHelper.credentialTaken_.bind(
+    this.dbRepoHelper
+  );
 
-  protected getUser = this.dbRepoHelper.getUser_;
+  protected getUser = this.dbRepoHelper.getUser_.bind(this.dbRepoHelper);
 
-  protected sendOtpMail = this.emailSmsHelper.sendOtpMail_;
+  protected sendOtpMail = this.emailSmsHelper.sendOtpMail_.bind(
+    this.emailSmsHelper
+  );
 
-  protected hashPassword = this.passwordHelpers.hashPassword_;
+  protected hashPassword = this.passwordHelpers.hashPassword_.bind(
+    this.passwordHelpers
+  );
 
-  protected checkPassword = this.passwordHelpers.checkPassword_;
+  protected checkPassword = this.passwordHelpers.checkPassword_.bind(
+    this.passwordHelpers
+  );
 
-  protected cacheOtp = this.otpHelper.cacheOtp_;
+  protected cacheOtp = this.otpHelper.cacheOtp_.bind(this.otpHelper);
 
   protected generatedOtp = this.generateOTP;
 
-  protected sendOtpSms = this.emailSmsHelper.sendOtpSms_;
+  protected sendOtpSms = this.emailSmsHelper.sendOtpSms_.bind(
+    this.emailSmsHelper
+  );
 
-  protected returnNumberOREmail = this.extraHelpers.returnNumberOREmail_;
+  protected returnNumberOREmail = this.extraHelpers.returnNumberOREmail_.bind(
+    this.extraHelpers
+  );
 
-  protected sendOtpEmailOrSms = this.emailSmsHelper.sendOtpEmailOrSms_;
+  protected sendOtpEmailOrSms = this.emailSmsHelper.sendOtpEmailOrSms_.bind(
+    this.emailSmsHelper
+  );
 
-  protected getUserByPhoneOREmail = this.dbRepoHelper.getUserByPhoneOREmail_;
+  protected getUserByPhoneOREmail =
+    this.dbRepoHelper.getUserByPhoneOREmail_.bind(this.dbRepoHelper);
 
-  protected throwCredVerified = this.extraHelpers.checkCredentialNotVerified_;
+  protected throwCredVerified =
+    this.extraHelpers.checkCredentialNotVerified_.bind(this.extraHelpers);
 
-  protected throwCredNotVerified = this.extraHelpers.checkCredentialVerified_;
+  protected throwCredNotVerified =
+    this.extraHelpers.checkCredentialVerified_.bind(this.extraHelpers);
 
-  protected getAndValidateOtp = this.otpHelper.getAndValidateOtp_;
+  protected getAndValidateOtp = this.otpHelper.getAndValidateOtp_.bind(
+    this.otpHelper
+  );
 
-  protected updateUser = this.dbRepoHelper.updateUser_;
+  protected updateUser = this.dbRepoHelper.updateUser_.bind(this.dbRepoHelper);
 
-  protected hashAndUpdatePassword = this.passwordHelpers.hashAndUpdatePassword_;
+  protected hashAndUpdatePassword =
+    this.passwordHelpers.hashAndUpdatePassword_.bind(this.passwordHelpers);
 
-  protected deleteCachedOtp = this.otpHelper.deleteCachedOtp_;
+  protected deleteCachedOtp = this.otpHelper.deleteCachedOtp_.bind(
+    this.otpHelper
+  );
 
-  protected getCachedOtp = this.otpHelper.getCachedOtp_;
+  protected getCachedOtp = this.otpHelper.getCachedOtp_.bind(this.otpHelper);
 }

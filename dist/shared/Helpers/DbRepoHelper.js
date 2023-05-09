@@ -14,6 +14,7 @@ class DbRepoHelper {
     }
     async credentialTaken_(credential, value) {
         const userExists = await this.userRepository.findByPhoneOrEmail(credential, value);
+        console.log(888888, userExists);
         if (userExists) {
             throw new AppError_1.default(`${credential} taken.`, 400);
         }

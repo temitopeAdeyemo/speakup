@@ -9,6 +9,7 @@ const axios_1 = require("axios");
 const AppError_1 = __importDefault(require("../utils/AppError"));
 const multer_1 = require("multer");
 function errorHandler(error, request, response, _) {
+    console.log(44444444, error);
     if (error instanceof AppError_1.default) {
         return response.status(error.statusCode).json({
             success: false,
