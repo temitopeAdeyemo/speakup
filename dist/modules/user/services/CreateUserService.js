@@ -10,8 +10,8 @@ class CreateUserService extends BaseService_1.default {
         await this.throwCredTaken('phone_number', data.phone_number);
         data.password = await this.hashPassword(data.password);
         await this.createUser(data);
-        await this.cacheOtp(`$verify_email.${data.phone_number}`, this.generatedOtp);
-        await this.sendOtpMail("verifyEmail", data.email, this.generatedOtp);
+        await this.cacheOtp(`$verify_email.${data.email}`, this.generatedOtp);
+        await this.sendOtpMail('verifyEmail', data.email, this.generatedOtp);
         return { email: data.email };
     }
 }

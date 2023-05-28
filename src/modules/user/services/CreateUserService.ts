@@ -10,12 +10,9 @@ class CreateUserService extends BaseService implements IBaseService {
 
     await this.createUser(data);
 
-    await this.cacheOtp(
-      `$verify_email.${data.phone_number}`,
-      this.generatedOtp
-    );
+    await this.cacheOtp(`$verify_email.${data.email}`, this.generatedOtp);
 
-    await this.sendOtpMail("verifyEmail", data.email, this.generatedOtp);
+    await this.sendOtpMail('verifyEmail', data.email, this.generatedOtp);
 
     return { email: data.email };
   }

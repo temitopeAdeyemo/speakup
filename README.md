@@ -14,15 +14,17 @@ The following technologies are being used in this project:
 - [Postgresql](https://www.postgres.com/)
 - [typeorm](https://www.typeorm.com/)
 - [redis](https://www.docker.com/)
+- [Kubernetes](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Docker](https://www.docker.com//)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 The following technologies will be be used in this project:
-- [Kubernetes](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
 - [Docker](https://www.docker.com//)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [RabbitMQ](https://expressjs.com/)
 - [Jest](https://www.postgres.com/)
 - [aws](https://www.typeorm.com/)
-
 
 ## Requirements
 
@@ -30,8 +32,8 @@ Before starting, you need to create a .env file in the root directory of the pro
 Kindly ensure that you are in the root directory before running the following commands.
 
 ## Note
-Ensure you have the used technologies listed above installed on your local machine as this project is not being deployed in a cloud environment.
 
+Ensure you have the used technologies listed above installed on your local machine as this project is not being deployed in a cloud environment.
 
 ## Install Dependencies and Run the Application
 
@@ -39,23 +41,50 @@ Ensure you have the used technologies listed above installed on your local machi
 yarn install
 ```
 
-## Run migrations
+### Run migrations
 
 ```bash
 yarn migration:generate && migration:up
 ```
 
-## Start the Application
+### Start the Application
+
 ```bash
 yarn dev
 ```
 
-## Revert migrations
+### Revert migrations
+
 ```bash
-migration:up
+migration:down
 ```
 
+### Spin up Docker Container
+
+```bash
+docker-compose up
+```
+
+### Spin down Docker Container
+
+```bash
+docker-compose down
+```
+
+### K8s
+
+```bash
+cd WHEELER-BLOG 
+kubectl apply -f kubernetes
+kubectl get all -n kubernetes-dashboard
+kubectl get ingress
+sudo vim /etc/hosts (To map and expose the ingres ip to wheeler-blog.com)
+goto wheeler-blog.com
+```
+
+
 ## Key Features (At the time)
+
 1. Users can create an account and login to the application
 2. Users can reset and change password.
-
+3. Verify phone

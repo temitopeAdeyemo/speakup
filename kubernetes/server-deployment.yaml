@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: wheeler-blog-server
+  template:
+    metadata:
+      labels:
+        component: wheeler-blog-server
+    spec:
+      containers:
+        - name: wheeler-blog-server
+          image: wheelerthegreat/wheeler_blog-api
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: redis-configmap
+                  key: REDIS_PORT
+            - name: PGUSER
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-configmap
+                  key: PG_USER
+            - name: PGHOST
+              value: db
+            - name: PGPORT
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-configmap
+                  key: PG_PORT
+            - name: PGDATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-configmap
+                  key: PG_DATABASE
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: PG_PASSWORD

@@ -7,8 +7,8 @@ const BaseService_1 = __importDefault(require("../../../shared/Helpers/BaseServi
 class GetPhoneOtpService extends BaseService_1.default {
     async execute(data) {
         const user = await this.getUser('email', data.email);
-        this.throwCredVerified('email', user);
-        this.cacheOtp(`verify_email.${data.email}`, this.generatedOtp);
+        await this.throwCredVerified('email', user);
+        await this.cacheOtp(`verify_email.${data.email}`, this.generatedOtp);
         this.sendOtpMail('verifyEmail', data.email, this.generatedOtp);
         return { otp: this.generatedOtp };
     }

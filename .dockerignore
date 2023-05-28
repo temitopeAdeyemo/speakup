@@ -11,3 +11,5 @@ LICENSE
 .git
 .gitignore
 *node_modules
+*Kubernetes
+Kubernetes/

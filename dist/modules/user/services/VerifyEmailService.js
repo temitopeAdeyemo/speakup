@@ -7,7 +7,7 @@ const BaseService_1 = __importDefault(require("./BaseService"));
 class VerifyUserPhoneService extends BaseService_1.default {
     async execute(data) {
         const userDetails = await this.getUser('email', data.email);
-        this.throwCredVerified('email', userDetails);
+        await this.throwCredVerified('email', userDetails);
         await this.getAndValidateOtp(`verify_email.${data.email}`, data.otp);
         this.updateUser({ email_verified: true }, userDetails);
     }
