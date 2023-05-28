@@ -88,3 +88,4 @@ docker-compose down
 1. Users can create an account and login to the application
 2. Users can reset and change password.
 3. Verify phone
+4. Verify email
