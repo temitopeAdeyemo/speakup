@@ -74,12 +74,12 @@ docker-compose down
 ### K8s
 
 ```bash
-cd WHEELER-BLOG 
-kubectl apply -f kubernetes
-kubectl get all -n kubernetes-dashboard
-kubectl get ingress
-sudo vim /etc/hosts (To map and expose the ingres ip to wheeler-blog.com)
-goto wheeler-blog.com
+- cd WHEELER-BLOG 
+- kubectl apply -f kubernetes
+- kubectl get all -n kubernetes-dashboard
+- kubectl get ingress
+- sudo vim /etc/hosts (To map and expose the ingres ip to wheeler-blog.com)
+- goto wheeler-blog.com
 ```
 
 
